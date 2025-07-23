@@ -1,8 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "tech-path-navigator",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Olayemi-Lawal.github.io/Tech-Path-Navigator",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
