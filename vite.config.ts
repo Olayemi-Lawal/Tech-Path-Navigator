@@ -3,18 +3,18 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// Replace with your GitHub repo name if deploying to GitHub Pages
-const repoName = "Tech-Path-Navigator";
+// ✅ Only the repo name is needed here
+const repoName = 'ai-tech-path-navigator';
 
 export default defineConfig(({ mode }) => ({
-  base: `/${repoName}/`,
+  base: `/${repoName}/`, // ✅ Correct use of the variable
   server: {
     host: "localhost",
     port: 8080,
   },
   plugins: [
     react(),
-    ...(mode === "development" ? [componentTagger()] : []),
+    ...(mode === 'development' ? [componentTagger()] : []),
   ],
   resolve: {
     alias: {
@@ -22,8 +22,6 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
-
-
 
 
 
