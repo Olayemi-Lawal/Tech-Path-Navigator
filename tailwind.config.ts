@@ -1,9 +1,12 @@
 import type { Config } from "tailwindcss";
-import animate from "tailwindcss-animate"; // ✅ Replace require with import
+import animate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: ["class"],
-  content: ["./**/*.{ts,tsx,js,jsx,html}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{ts,tsx,js,jsx,html}", // ✅ More specific and safe
+  ],
   prefix: "",
   theme: {
     container: {
@@ -25,7 +28,6 @@ const config: Config = {
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
         },
-        // ... other color groups ...
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,7 +80,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [animate], // ✅ No require
+  plugins: [animate],
 };
 
 export default config;
