@@ -4,7 +4,7 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // ✅ Only the repo name is needed here
-const repoName = '/Tech-Path-Navigator/';
+const repoName = 'Tech-Path-Navigator';
 
 export default defineConfig(({ mode }) => ({
   base: `/${repoName}/`, // ✅ Correct use of the variable
