@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import heroImage from "../assets/hero-image.png"; // Make sure this image exists in /src/assets
+
 const heroImage = "https://source.unsplash.com/featured/?technology,ai";
 
 const Home = () => {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row items-center justify-between gap-8 px-6 py-12 bg-background">
+    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 px-4 sm:px-6 md:px-12 py-12 bg-background">
       {/* Text Section */}
-      <div className="flex-1 text-center md:text-left space-y-6">
-        <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-primary">
+      <div className="flex-1 w-full text-center md:text-left space-y-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-primary">
           Discover Your Ideal Tech Career Path
         </h1>
-        <p className="text-muted-foreground text-lg">
+        <p className="text-muted-foreground text-base sm:text-lg">
           Explore personalized recommendations tailored to your interests and goals.
         </p>
         <Link
@@ -23,7 +23,7 @@ const Home = () => {
       </div>
 
       {/* Image Section */}
-      <div className="flex-1 max-w-md md:max-w-lg mx-auto">
+      <div className="flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
         <img
           src={heroImage}
           alt="Career Path"
@@ -35,4 +35,5 @@ const Home = () => {
 };
 
 export default Home;
+
 

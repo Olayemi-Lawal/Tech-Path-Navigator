@@ -16,6 +16,7 @@ const Navbar = () => {
         <button
           className="md:hidden text-gray-700 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle navigation menu"
         >
           <svg
             className="w-6 h-6"
@@ -29,8 +30,8 @@ const Navbar = () => {
               strokeLinejoin="round"
               d={
                 isOpen
-                  ? "M6 18L18 6M6 6l12 12" // X icon
-                  : "M4 6h16M4 12h16M4 18h16" // Hamburger icon
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16M4 18h16"
               }
             />
           </svg>
@@ -40,26 +41,26 @@ const Navbar = () => {
         <div
           className={`${
             isOpen ? "block" : "hidden"
-          } md:flex md:items-center w-full md:w-auto mt-4 md:mt-0`}
+          } w-full md:flex md:items-center md:w-auto mt-4 md:mt-0`}
         >
-          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0">
+          <ul className="flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-center">
             <li>
-              <a href="#home" className="text-gray-700 hover:text-blue-600">
+              <a href="#home" className="block px-4 py-2 text-gray-700 hover:text-blue-600">
                 Home
               </a>
             </li>
             <li>
-              <a href="#features" className="text-gray-700 hover:text-blue-600">
+              <a href="#features" className="block px-4 py-2 text-gray-700 hover:text-blue-600">
                 Features
               </a>
             </li>
             <li>
-              <a href="#about" className="text-gray-700 hover:text-blue-600">
+              <a href="#about" className="block px-4 py-2 text-gray-700 hover:text-blue-600">
                 About
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600">
+              <a href="#contact" className="block px-4 py-2 text-gray-700 hover:text-blue-600">
                 Contact
               </a>
             </li>
@@ -71,5 +72,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-
