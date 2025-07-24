@@ -55,13 +55,13 @@ export const WorkStyleStep = ({ selected, onChange }: WorkStyleStepProps) => {
   };
 
   return (
-    <div className="space-y-6 px-2 sm:px-4">
-      <p className="text-muted-foreground">
+    <div className="space-y-6 px-4 sm:px-6">
+      <p className="text-muted-foreground text-sm sm:text-base">
         How do you prefer to work? Understanding your work style helps match you with the right career path.
       </p>
 
-      {/* Responsive Flex Layout */}
-      <div className="flex flex-wrap gap-4 justify-center sm:justify-start">
+      {/* Responsive Button Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {WORK_STYLES.map((style) => {
           const isSelected = selected.includes(style.id);
           const Icon = style.icon;
@@ -70,7 +70,7 @@ export const WorkStyleStep = ({ selected, onChange }: WorkStyleStepProps) => {
             <Button
               key={style.id}
               variant={isSelected ? "ai" : "glass"}
-              className={`w-full sm:w-[48%] min-h-[130px] p-4 flex flex-col items-start text-left transition-all duration-300 ${
+              className={`h-auto p-4 flex flex-col items-start text-left transition-all duration-300 ${
                 isSelected ? "scale-105 shadow-glow" : "hover:scale-[1.02]"
               }`}
               onClick={() => toggleWorkStyle(style.id)}
@@ -81,7 +81,7 @@ export const WorkStyleStep = ({ selected, onChange }: WorkStyleStepProps) => {
                     isSelected ? "text-primary-foreground" : "text-primary"
                   }`}
                 />
-                <span className="font-medium">{style.label}</span>
+                <span className="font-medium text-sm sm:text-base">{style.label}</span>
                 {isSelected && (
                   <Badge variant="secondary" className="ml-auto">
                     Selected
@@ -89,7 +89,7 @@ export const WorkStyleStep = ({ selected, onChange }: WorkStyleStepProps) => {
                 )}
               </div>
               <p
-                className={`text-sm ${
+                className={`text-xs sm:text-sm ${
                   isSelected
                     ? "text-primary-foreground/80"
                     : "text-muted-foreground"
