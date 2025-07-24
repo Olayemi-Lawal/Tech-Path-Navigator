@@ -29,12 +29,12 @@ export const GoalsStep = ({ selected, onChange }: GoalsStepProps) => {
       <p className="text-muted-foreground">
         What are your main career aspirations? Select all that resonate with you.
       </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {GOALS.map((goal) => {
           const isSelected = selected.includes(goal.id);
           const Icon = goal.icon;
-          
+
           return (
             <Button
               key={goal.id}
@@ -58,7 +58,7 @@ export const GoalsStep = ({ selected, onChange }: GoalsStepProps) => {
           );
         })}
       </div>
-      
+
       {selected.length > 0 && (
         <div className="mt-6 p-4 bg-gradient-secondary rounded-lg">
           <p className="text-sm text-muted-foreground mb-2">Your career goals:</p>

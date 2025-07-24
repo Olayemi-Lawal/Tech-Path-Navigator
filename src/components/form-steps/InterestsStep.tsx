@@ -25,40 +25,40 @@ export const InterestsStep = ({ selected, onChange }: InterestsStepProps) => {
   };
 
   return (
-    <div className="space-y-4">
-      <p className="text-muted-foreground">
+    <div className="space-y-6">
+      <p className="text-muted-foreground text-sm sm:text-base">
         Select all areas that genuinely interest you. This helps us understand what motivates you.
       </p>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {INTERESTS.map((interest) => {
           const isSelected = selected.includes(interest.id);
           const Icon = interest.icon;
-          
+
           return (
             <Button
               key={interest.id}
               variant={isSelected ? "ai" : "glass"}
-              className={`h-auto p-4 flex flex-col items-start text-left transition-all duration-300 ${
-                isSelected ? 'scale-105 shadow-glow' : 'hover:scale-102'
+              className={`w-full h-auto p-4 flex flex-col items-start text-left transition-all duration-300 rounded-xl ${
+                isSelected ? 'scale-100 shadow-md' : 'hover:scale-[1.02]'
               }`}
               onClick={() => toggleInterest(interest.id)}
             >
-              <div className="flex items-center gap-3 w-full mb-2">
-                <Icon className={`w-5 h-5 ${isSelected ? 'text-primary-foreground' : 'text-primary'}`} />
-                <span className="font-medium">{interest.label}</span>
+              <div className="flex items-center gap-3 w-full mb-2 flex-wrap">
+                <Icon className={`w-5 h-5 shrink-0 ${isSelected ? 'text-primary-foreground' : 'text-primary'}`} />
+                <span className="font-medium text-sm sm:text-base">{interest.label}</span>
                 {isSelected && (
                   <Badge variant="secondary" className="ml-auto">Selected</Badge>
                 )}
               </div>
-              <p className={`text-sm ${isSelected ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+              <p className={`text-xs sm:text-sm break-words ${isSelected ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
                 {interest.description}
               </p>
             </Button>
           );
         })}
       </div>
-      
+
       {selected.length > 0 && (
         <div className="mt-6 p-4 bg-gradient-secondary rounded-lg">
           <p className="text-sm text-muted-foreground mb-2">Selected interests:</p>
