@@ -1,25 +1,20 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
-import { componentTagger } from "lovable-tagger";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import path from 'path'
 
-const repoName = "Tech-Path-Navigator";
-export default defineConfig(({ mode }) => ({
-  base: `/${repoName}/`, // ✅ Needed for GitHub Pages
-  server: {
-    host: "localhost",
-    port: 8080,
-  },
-  plugins: [
-    react(),
-    ...(mode === "development" ? [componentTagger()] : []),
-  ],
+// ✅ ONLY slashes around repoName here
+const repoName = 'Tech-Path-Navigator'
+
+export default defineConfig({
+  base: `/${repoName}/`, // GitHub Pages needs this
+  plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
-}));
+})
+
 
 
 
