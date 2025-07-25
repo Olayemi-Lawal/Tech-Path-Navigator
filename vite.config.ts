@@ -4,7 +4,6 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 const repoName = "Tech-Path-Navigator";
-
 export default defineConfig(({ mode }) => ({
   base: `/${repoName}/`, // ✅ Needed for GitHub Pages
   server: {
